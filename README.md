@@ -1,4 +1,8 @@
-# Laboratorio Control-M
+# Control-M Lab
 
-Meu laboratorio de estudos de Git, VS Code, Docker e Automation API.
+Laboratorio de estudos de
+Control-M Automation API, Git,
+Docker e Jenkins.
+
+Autor: Fabio Freitas
 
