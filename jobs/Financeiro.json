@@ -1,0 +1,14 @@
+{
+  "Financeiro": {
+    "Type": "Job:Command",
+    "Command": "echo Processando Financeiro",
+    "Host": "Agent01",
+    "RunAs": "controlm",
+    "Description": "Laboratório Control-M",
+    "When": {
+      "Months": ["ALL"],
+      "MonthDays": ["ALL"],
+      "WeekDays": ["MON","TUE","WED","THU","FRI"]
+    }
+  }
+}
