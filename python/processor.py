@@ -2,16 +2,18 @@ from validator import validar_job
 from json_generator import gerar_json
 
 
-def processar_jobs(jobs):
+def processar_jobs(folder):
 
-    total = len(jobs)
+    total = len(folder.jobs)
     validos = 0
     invalidos = 0
     houve_erros = False
 
-    for job in jobs:
+    for job in folder.jobs:
 
-        erros = validar_job(job, jobs)
+        print(job.nome, "->", job.depends_on)
+        
+        erros = validar_job(job, folder.jobs)
 
         if erros:
             houve_erros = True
@@ -26,6 +28,6 @@ def processar_jobs(jobs):
             validos += 1
 
     if not houve_erros:
-        gerar_json(jobs)
+        gerar_json(folder)
 
     return total, validos, invalidos

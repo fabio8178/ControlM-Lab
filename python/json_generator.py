@@ -2,14 +2,14 @@ import json
 from pathlib import Path
 
 
-def gerar_json(jobs):
+def gerar_json(folder):
 
     dados = {
-        "Application": jobs[0].application,
+        "Application": folder.application,
         "Jobs": {}
     }
 
-    for job in jobs:
+    for job in folder.jobs:
 
         dados["Jobs"][job.nome] = {
             "Type": "Job:Command",
@@ -27,7 +27,7 @@ def gerar_json(jobs):
     pasta = Path("../output/jobs")
     pasta.mkdir(parents=True, exist_ok=True)
 
-    arquivo = pasta / "Financeiro.json"
+    arquivo = pasta / f"{folder.nome}.json"
 
     with arquivo.open("w", encoding="utf-8") as f:
         json.dump(dados, f, indent=4)

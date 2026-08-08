@@ -8,9 +8,9 @@ def main():
     print("Control-M Automation Factory")
     print("=" * 50)
 
-    jobs = ler_jobs()
+    folder = ler_jobs()
 
-    total, validos, invalidos = processar_jobs(jobs)
+    total, validos, invalidos = processar_jobs(folder)
 
     print("\n" + "=" * 50)
     print("Resumo")
