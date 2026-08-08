@@ -1,18 +1,24 @@
 from excel_reader import ler_jobs
-from json_generator import gerar_json
+from processor import processar_jobs
 
 
 def main():
+
     print("=" * 50)
     print("Control-M Automation Factory")
     print("=" * 50)
 
     jobs = ler_jobs()
 
-    print("\nJobs encontrados:\n")
+    total, validos, invalidos = processar_jobs(jobs)
 
-    for job in jobs:
-        gerar_json(job)
+    print("\n" + "=" * 50)
+    print("Resumo")
+    print("=" * 50)
+
+    print(f"Jobs lidos      : {total}")
+    print(f"Jobs válidos    : {validos}")
+    print(f"Jobs inválidos  : {invalidos}")
 
 
 if __name__ == "__main__":

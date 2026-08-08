@@ -1,5 +1,6 @@
 from openpyxl import load_workbook
 from pathlib import Path
+from job import Job
 
 
 def ler_jobs():
@@ -15,11 +16,16 @@ def ler_jobs():
     jobs = []
 
     for linha in planilha.iter_rows(min_row=2, values_only=True):
-        job = {
-            "Job": linha[0],
-            "Host": linha[1],
-            "Command": linha[2]
-        }
+        job = Job(
+            linha[0],
+            linha[1],
+            linha[2],
+            linha[3],
+            linha[4],
+            linha[5],
+            linha[6],
+            linha[7]
+        )
         jobs.append(job)
 
     return jobs
