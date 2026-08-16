@@ -1,4 +1,21 @@
-output/
+# Python
 __pycache__/
 *.pyc
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Logs
+logs/
+
+# VS Code
 .vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Output
+output/
